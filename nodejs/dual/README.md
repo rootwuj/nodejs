@@ -16,5 +16,4 @@ docker-compose up -d node1 node2 node3
 ```
 docker build -t nvbeta/nginx ./nginx
 docker build -t nvbeta/node ./node
-docker build -t nvbeta/redis ./redis
 ```
