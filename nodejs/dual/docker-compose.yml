@@ -1,0 +1,36 @@
+version: '2'
+services:
+    nginx:
+        image: nvbeta/nginx
+        container_name: nginx
+        extra_hosts:
+            - "node:<HOST_2_IP>"
+        ports:
+            - "80:80"
+            - "443:443"
+    redis:
+        image: nvbeta/redis
+        container_name: redis
+        ports:
+            - "6379:6379"
+    node1:
+        image: nvbeta/node
+        container_name: node1
+        extra_hosts:
+            - "redis:<HOST_1_IP>"
+        ports:
+            - "8887:8888"
+    node2:
+        image: nvbeta/node
+        container_name: node2
+        extra_hosts:
+            - "redis:<HOST_1_IP>"
+        ports:
+            - "8888:8888"
+    node3:
+        image: nvbeta/node
+        container_name: node3
+        extra_hosts:
+            - "redis:<HOST_1_IP>"
+        ports:
+            - "8889:8888"
