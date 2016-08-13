@@ -3,18 +3,15 @@
 Nginx, Node.js and Redis Dockerfiles are based on msanand's code at [https://github.com/msanand/docker-workflow](https://github.com/msanand/docker-workflow).
 
 ### Start services
-* On host one
+Edit config.toml, change _BackendOverrideAddress_'s value to the IP of the host running the app.
 ```
-docker-compose up -d nginx redis
-```
-* On host two
-```
-docker-compose up -d node1 node2 node3
+docker-compose up -d
+
+docker-compose scale node=5
 ```
 
-### Commands to build these container images manually
+### Build containers manually
 ```
 docker build -t nvbeta/nginx ./nginx
 docker build -t nvbeta/node ./node
-docker build -t nvbeta/redis ./redis
 ```
