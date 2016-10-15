@@ -4,11 +4,14 @@ Nginx, Node.js and Redis Dockerfiles are based on msanand's code at [https://git
 
 ### Start services
 * On the first host (host1)
+
 Edit start_nginx_redis.sh, change 10.1.x.x to host2's IP
 ```
 ./start_nginx_redis.sh
 ```
+
 * On the second host (host2)
+
 Edit start_node.sh, change 10.1.x.x to host1's IP
 ```
 ./start_node.sh
